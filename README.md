@@ -36,8 +36,8 @@ ifconfig wlan0 down
 iwconfig wlan0 mode monitor
 ifconfig wlan0 up
 
-# Option 2
-airmon-ng start wlan0
+# Option 2 
+airmon-ng start wlan0 
 ```
 ### Start monitoring
 ```bash
@@ -52,4 +52,17 @@ CH  9 ][ Elapsed: 1 min ][ 2022-05-24 04:30 ][ WPA handshake: 38:43:7D:4D:34:68
  ...
 
 ```
+### Stop monitormode
+```bash
+# Option 1
+ifconfig wlan0 down
+iwconfig wlan0 mode managed
+ifconfig wlan0 up
+
+# Option 2 
+airmon-ng stop wlan0 
+```
+
+
+
 
