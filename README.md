@@ -36,7 +36,8 @@ https://www.cellstream.com/reference-reading/tipsandtricks/410-3-ways-to-put-you
 ```bash
 # Option 1
 sudo ip link set wlan0 down
-sudo iw wlan0 set monitor none
+sudo iw wlan0 set type monitor
+sudo iw wlan0 set type managed
 sudo ip link set wlan0 up
 
 # Option 2 
@@ -55,17 +56,18 @@ CH  9 ][ Elapsed: 1 min ][ 2022-05-24 04:30 ][ WPA handshake: 38:43:7D:4D:34:68
  ...
 
 ```
-### Stop monitormode
+### Stop monitormode and change wlan intf back to manged mode 
 ```bash
 # Option 1
-ifconfig wlan0 down
-iwconfig wlan0 mode managed
-ifconfig wlan0 up
+sudo ip link set wlan0 down
+sudo iw wlan0 set type managed
+sudo ip link set wlan0 up
 
 # Option 2 
 airmon-ng stop wlan0 
 ```
-
+# Graphic WLAN Analyser: sparrow-wifi
+https://github.com/ghostop14/sparrow-wifi/blob/master/README.md
 
 
 
