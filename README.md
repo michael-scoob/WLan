@@ -30,11 +30,14 @@ Killing these processes:
 ```
 now you can start monitor mode ...
 
+LINK:  
+https://www.cellstream.com/reference-reading/tipsandtricks/410-3-ways-to-put-your-wi-fi-interface-in-monitor-mode-in-linux
+
 ```bash
 # Option 1
-ifconfig wlan0 down
-iwconfig wlan0 mode monitor
-ifconfig wlan0 up
+sudo ip link set wlan0 down
+sudo iw wlan0 set monitor none
+sudo ip link set wlan0 up
 
 # Option 2 
 airmon-ng start wlan0 
